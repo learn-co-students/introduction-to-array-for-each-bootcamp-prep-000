@@ -22,6 +22,8 @@ But wouldn't it be nice if there were a way to access the elements directly, wit
 
 Well, it's our lucky day!
 
+Follow along in `index.js` — you can run your code by copying it into your browser's console.
+
 ## `Array.prototype.forEach`
 
 Every array comes with the method `forEach` in JavaScript. (We've been writing it out as `Array.prototype.forEach` to hammer home that this method belongs on Array's prototype — but more on prototypes later.)
@@ -87,7 +89,7 @@ Now we can pass _any_ function to `doToEvens`, and that function will be called 
 Let's take it a step farther — what if we don't know beforehand what array we're going to be operating on? We can define a function that accepts two arguments: _any_ array and a callback for `forEach`:
 
 ``` javascript
-function doToArray(array, callback) {
+function doToElementsInArray(array, callback) {
   array.forEach(callback)
 }
 ```
@@ -101,11 +103,13 @@ function changeCompletely(element, index, array) {
 
 const animals = ["dog", "fish", "cat"]
 
-doToArray(animals, changeCompletely)
+doToElementsInArray(animals, changeCompletely)
 
 // log out animals -- pretty cool, right?
 console.log(animals)
 ```
+
+If you've been following along in `index.js`, you should now be able to run `learn submit` — all of the tests should pass!
 
 ## Resources
 
