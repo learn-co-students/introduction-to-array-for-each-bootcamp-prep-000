@@ -3,17 +3,17 @@ Introduction to Array.prototype.forEach
 
 ## Objectives
 
-1. Explain why we use `Array.prototype.forEach`
-2. Explain how `Array.prototype.forEach` works
+1. Explain why we use `forEach()`
+2. Explain how `forEach()` works
 
 ## The weaknesses of `for` loops
 
 Up until now, we've been doing our iterating with `for` loops. These are great for one-off tasks, and they're reasonably explicit: "I'm incrementing a variable, `i`, from `0` to `myArray.length - 1`, and using `i` to access the elements of the array."
 
 ``` javascript
-const evens = [0, 2, 4, 6, 8, 10]
+var evens = [0, 2, 4, 6, 8, 10]
 
-for (let i = 0, l = evens.length; i < l; i++) {
+for (var i = 0, l = evens.length; i < l; i++) {
   console.log(`${evens[i]} is not odd!`)
 }
 ```
@@ -24,14 +24,14 @@ Well, it's our lucky day!
 
 Follow along in `index.js` — you can run your code by copying it into your browser's console.
 
-## `Array.prototype.forEach`
+## `forEach()`
 
-Every array comes with the method `forEach` in JavaScript. (We've been writing it out as `Array.prototype.forEach` to hammer home that this method belongs on Array's prototype — but more on prototypes later.)
+Every array comes with the method `forEach()` in JavaScript.
 
 This method lets us iterate over every element of the array directly, without writing out a whole `for` loop. Let's rewrite the above example with `evens` using `forEach`:
 
 ``` javascript
-const evens = [0, 2, 4, 6, 8, 10]
+var evens = [0, 2, 4, 6, 8, 10]
 
 evens.forEach(even => {
   console.log(`${even} is not odd!`)
@@ -77,7 +77,7 @@ But what if we don't know ahead of time what we want to do to our `evens` array?
 
 ``` javascript
 // no need to redeclare if you've declared this above
-const evens = [0, 2, 4, 6, 8, 10]
+var evens = [0, 2, 4, 6, 8, 10]
 
 function doToEvens(callback) {
   evens.forEach(callback)
@@ -101,7 +101,7 @@ function changeCompletely(element, index, array) {
   array[index] = (Math.random() * 100).toString() + '!!!'
 }
 
-const animals = ["dog", "fish", "cat"]
+var animals = ["dog", "fish", "cat"]
 
 doToElementsInArray(animals, changeCompletely)
 
